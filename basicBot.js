@@ -19,6 +19,15 @@
         }
         return -1;
     };
+    
+        API.on(API.ADVANCE, function(){
+       var waitlist = API.getWaitList()
+    if (API.getWaitListPosition() == 0) {
+    	API.sendChat('/me @' + API.getUser().username + ' You\'re up shortly!')
+    }
+			else {console.log('The waitlist is empty, fools')}
+		}
+	);
 
     var kill = function () {
         clearInterval(basicBot.room.autodisableInterval);
